@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    RESTful Tasks API
+  </h1>
+  <hr>
+</div>
+
+<div class="headerArea">
+  <button (click)="onButtonClickBOB()">Get All Tasks</button>
+</div>
+
+<div *ngIf="task_arr" class="tasks">
+  <h1>Tasks:</h1>
+  <!-- task is the obj inside task_arr -->
+  <li *ngFor="let task of task_arr">  
+    {{task.title}} <button (click)="taskToShow(task)">show description</button>
+  </li>
+</div>
+
+
+
+    <app-task *ngIf="selectedTask" [task]="selectedTask"></app-task>
